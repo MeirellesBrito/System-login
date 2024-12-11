@@ -10,10 +10,10 @@ module.exports = (app) => {
   app.use(
     express.json(),
     auth,
+    login,
     usuario,
     telefones,
     endereco,
-    login,
 
   );
 };

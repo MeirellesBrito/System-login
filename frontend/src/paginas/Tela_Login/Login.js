@@ -83,7 +83,7 @@ const Login = () => {
         </form>
 
         <div className="mt-4 text-center">
-          <p className="text-sm text-gray-500">Não tem uma conta? <a href="/register" className="text-blue-600 hover:text-blue-800">Cadastre-se</a></p>
+          <p className="text-sm text-gray-500">Não tem uma conta? <a href="/formulario" className="text-blue-600 hover:text-blue-800">Cadastre-se</a></p>
         </div>
       </div>
     </div>
