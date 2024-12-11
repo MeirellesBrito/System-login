@@ -1,6 +1,10 @@
 # Guia de Configuração do Projeto com Sequelize e Node.js
 
 ![Imagem do Diagrama de Banco de Dados](image.png)
+![Imagem da tela home](image-5.png)
+![Imagem da tela de login](image-2.png)
+![Imagem da tela de cadastro de usuario](image-3.png)
+![Imagem da tela de cadastro de login](image-4.png)
 
 ## Visão Geral do Projeto
 
