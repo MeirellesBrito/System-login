@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.teste {
+   background-image: url('./static/imgfunto.png');
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+    width: 100%;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
