@@ -6,12 +6,38 @@
 
 Este projeto foi desenvolvido com o objetivo de treinar e demonstrar minhas habilidades no **backend** utilizando **Node.js** com **Express**, além de utilizar **Sequelize** para o gerenciamento de um banco de dados **MySQL**. O foco principal deste projeto é a criação de uma aplicação robusta que envolva a manipulação de dados no banco e a integração com um sistema backend eficiente.
 
-O projeto abrange as seguintes tecnologias:
+## Tecnologias e Dependências
 
-- **Banco de Dados**: MySQL
-- **ORM**: Sequelize
-- **Backend**: Node.js (Express)
-- **Frontend**: React.js com TailwindCSS
+O projeto foi desenvolvido utilizando uma combinação de **Node.js**, **React.js**, e **MySQL** com a ajuda de diversas bibliotecas para facilitar o desenvolvimento e garantir a segurança e eficiência do sistema. A seguir estão as principais dependências utilizadas no **backend** e no **frontend**:
+
+### Backend
+
+O backend foi desenvolvido utilizando **Node.js** com o framework **Express**. Para gerenciar o banco de dados e garantir a segurança das informações, foram usadas as seguintes dependências:
+
+- **bcryptjs**: Usado para **criptografar senhas** de usuários antes de armazená-las no banco de dados, garantindo segurança.
+- **cors**: Configura o **CORS (Cross-Origin Resource Sharing)** para permitir que o frontend acesse o backend de diferentes origens.
+- **dotenv**: Permite o uso de variáveis de ambiente, mantendo credenciais e configurações sensíveis de forma segura.
+- **express**: O framework **Express** foi utilizado para estruturar o servidor e as rotas do backend.
+- **jsonwebtoken**: Usado para a criação e verificação de **tokens JWT**, que são fundamentais para autenticação de usuários.
+- **mysql2**: Cliente para se comunicar com o banco de dados **MySQL**.
+- **sequelize**: ORM utilizado para facilitar a comunicação com o banco de dados MySQL e para gerenciar migrações, associações e consultas de forma mais eficiente.
+- **nodemon**: Utilizado para reiniciar automaticamente o servidor durante o desenvolvimento, permitindo uma experiência de desenvolvimento mais fluida.
+- **uuid**: Gerador de **IDs únicos**, útil para criar identificadores exclusivos para registros no banco de dados.
+
+### Frontend
+
+O frontend foi desenvolvido utilizando **React.js** com o **TailwindCSS** para uma estilização rápida e eficiente. As principais dependências incluem:
+
+- **react**: A principal biblioteca para construção da interface de usuário.
+- **react-router-dom**: Utilizado para gerenciar a navegação e o roteamento entre diferentes páginas no React.
+- **tailwindcss**: Framework CSS que fornece classes utilitárias para estilização rápida e responsiva.
+- **axios**: Cliente HTTP para realizar requisições ao backend, como login e registro de usuários.
+- **dotenv**: Utilizado também no frontend para lidar com variáveis de ambiente, facilitando a configuração da aplicação.
+- **jwt-decode**: Usado para decodificar os **tokens JWT** recebidos do backend, permitindo verificar se o usuário está autenticado.
+- **@heroicons/react** e **@headlessui/react**: Bibliotecas de **componentes de UI** que oferecem ícones e componentes acessíveis, como modais e menus, para a construção de interfaces interativas e de fácil usabilidade.
+
+Essas dependências garantem uma boa estrutura de desenvolvimento tanto no **backend** quanto no **frontend**, proporcionando segurança, eficiência e uma boa experiência para o usuário final.
+
 
 Além disso, o projeto implementa **criptografia de senhas** para garantir a segurança dos dados sensíveis no banco de dados. A senha é armazenada de forma segura utilizando **bcryptjs**, garantindo que, mesmo em caso de acesso indevido ao banco, as senhas não possam ser lidas diretamente.
 
@@ -19,110 +45,43 @@ Além disso, o projeto implementa **criptografia de senhas** para garantir a seg
 
 O projeto implementa a criptografia de senhas utilizando a biblioteca **bcryptjs**. Ao registrar um usuário, a senha é criptografada antes de ser armazenada no banco de dados. Aqui está um exemplo de como a senha é armazenada de forma segura:
 
-![Imagem da Criptografia da Senha no Banco de Dados]![alt text](image-1.png)
+![Imagem da Criptografia da Senha no Banco de Dados](image-1.png)
 
 Esse método garante que, mesmo se alguém acessar o banco de dados, as senhas estarão em formato criptografado e não poderão ser lidas diretamente.
- e Node.js
-![alt text](image.png)
-
-## Parte 1: Configuração do Sequelize
-
-### 1. Instalar as dependências necessárias:
-```bash
-npm install sequelize
-npm install mysql2
-```
-
-### 2. Instalar o `sequelize-cli`:
-- Instalar globalmente:
-  ```bash
-  npm install -g sequelize-cli
-  ```
-- Instalar localmente (dentro do projeto):
-  ```bash
-  npm install sequelize-cli --save-dev
-  ```
-
-### 3. Inicializar o Sequelize no projeto:
-```bash
-npx sequelize-cli init
-```
-
-### 4. Criar um modelo e migração:
-```bash
-npx sequelize-cli model:generate --name Usuario --attributes nome:string,sobreNome:string,status:boolean,login_id:integer
-```
-
-### 5. Executar a migração:
-```bash
-npx sequelize-cli db:migrate
-```
-
-### 6. Popular o banco com seeders (opcional):
-- Gerar um seeder:
-  ```bash
-  npx sequelize-cli seed:generate --name usuario-seeder
-  ```
-- Executar os seeders:
-  ```bash
-  npx sequelize-cli db:seed:all
-  ```
-
-### 7. Atualizar comandos do `sequelize-cli`:
-O `sequelize-cli` precisa saber que agora o arquivo de configuração mudou de `.json` para `.js`. Adicione o parâmetro `--config` ao rodar os comandos:
-```bash
-npx sequelize-cli db:migrate --config config/config.js
-```
-
-### 8. Reverter as migrações:
-- Reverter todas as migrações:
-  ```bash
-  npx sequelize-cli db:migrate:undo:all
-  ```
 
 ---
 
-## Parte 2: Instalação de Dependências do Node.js
+## Iniciando o Backend (Node.js com Express)
 
-### 1. Inicializar o projeto Node.js:
-```bash
-npm init -y
-```
+O backend foi desenvolvido utilizando **Node.js** com o framework **Express**. Para iniciar o servidor:
 
-### 2. Instalar o Express:
-```bash
-npm install express
-```
+1. Inicie o servidor, que estará rodando na porta configurada (geralmente `3000`).
+2. O **Nodemon** foi configurado para reiniciar automaticamente o servidor durante o desenvolvimento, permitindo que você veja as alterações imediatamente sem a necessidade de reiniciar o servidor manualmente.
 
-### 3. Instalar o CORS:
-```bash
-npm install cors
-```
+---
 
-### 4. Instalar o pacote dotenv:
-```bash
-npm install dotenv
-```
+## Iniciando o Frontend (React.js com TailwindCSS)
 
-### 5. Instalar o Nodemon:
-```bash
-npm install nodemon
-```
+O frontend foi desenvolvido utilizando **React.js** e estilizado com **TailwindCSS**. Para iniciar o servidor de desenvolvimento:
 
-### 6. Instalar o bcryptjs:
-```bash
-npm install bcryptjs
-```
+1. Inicie o frontend, que será acessível no navegador em `http://localhost:3001`.
+2. O **TailwindCSS** foi integrado ao projeto para permitir um estilo rápido e eficiente dos componentes utilizando classes utilitárias.
 
-### 7. Instalar o UUID:
-```bash
-npm install uuid
-```
+---
 
-### 8. Instalar o jsonwebtoken:
-```bash
-npm install jsonwebtoken
-# System-login
-# System-login
+## Iniciando o Banco de Dados (MySQL com Sequelize)
 
+O banco de dados utilizado é o **MySQL**, e o **Sequelize** é o ORM utilizado para gerenciar a comunicação entre o backend e o banco de dados. Para iniciar o banco de dados:
 
+1. Inicie o MySQL na sua máquina local ou em um servidor. Certifique-se de que o serviço MySQL esteja ativo.
+2. Configure a conexão com o banco em `config/config.js`. Ajuste as credenciais de acesso conforme necessário.
+3. Execute as migrações para criar as tabelas no banco de dados.
+4. (Opcional) Popule o banco de dados com dados iniciais utilizando **seeders**.
+
+---
+
+## Conclusão
+
+Este projeto utiliza uma combinação de **Node.js**, **Express**, **Sequelize**, **React.js** e **TailwindCSS** para criar uma aplicação robusta com um backend eficiente e um frontend responsivo. A utilização de **bcryptjs** para criptografia de senhas é uma medida importante para garantir a segurança dos dados sensíveis no banco.
+
+Esse projeto serve como uma demonstração das minhas habilidades no desenvolvimento backend, gerenciamento de banco de dados e integração de tecnologias modernas para construção de aplicações web.
