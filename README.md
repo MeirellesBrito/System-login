@@ -1,4 +1,29 @@
-# Guia de Configuração de Projeto com Sequelize e Node.js
+# Guia de Configuração do Projeto com Sequelize e Node.js
+
+![Imagem do Diagrama de Banco de Dados](image.png)
+
+## Visão Geral do Projeto
+
+Este projeto foi desenvolvido com o objetivo de treinar e demonstrar minhas habilidades no **backend** utilizando **Node.js** com **Express**, além de utilizar **Sequelize** para o gerenciamento de um banco de dados **MySQL**. O foco principal deste projeto é a criação de uma aplicação robusta que envolva a manipulação de dados no banco e a integração com um sistema backend eficiente.
+
+O projeto abrange as seguintes tecnologias:
+
+- **Banco de Dados**: MySQL
+- **ORM**: Sequelize
+- **Backend**: Node.js (Express)
+- **Frontend**: React.js com TailwindCSS
+
+Além disso, o projeto implementa **criptografia de senhas** para garantir a segurança dos dados sensíveis no banco de dados. A senha é armazenada de forma segura utilizando **bcryptjs**, garantindo que, mesmo em caso de acesso indevido ao banco, as senhas não possam ser lidas diretamente.
+
+### Exemplo de Banco de Dados com Senha Criptografada
+
+O projeto implementa a criptografia de senhas utilizando a biblioteca **bcryptjs**. Ao registrar um usuário, a senha é criptografada antes de ser armazenada no banco de dados. Aqui está um exemplo de como a senha é armazenada de forma segura:
+
+![Imagem da Criptografia da Senha no Banco de Dados]![alt text](image-1.png)
+
+Esse método garante que, mesmo se alguém acessar o banco de dados, as senhas estarão em formato criptografado e não poderão ser lidas diretamente.
+ e Node.js
+![alt text](image.png)
 
 ## Parte 1: Configuração do Sequelize
 
@@ -99,3 +124,5 @@ npm install uuid
 npm install jsonwebtoken
 # System-login
 # System-login
+
+
